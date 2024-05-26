@@ -22,18 +22,36 @@ class SkinImage{
 
 	public const SINGLE_SKIN_SIZE = 64 * 32 * self::PIXEL_SIZE;
 	public const DOUBLE_SKIN_SIZE = 64 * 64 * self::PIXEL_SIZE;
+
 	public const SKIN_128_32_SIZE = 128 * 32 * self::PIXEL_SIZE;
 	public const SKIN_128_64_SIZE = 128 * 64 * self::PIXEL_SIZE;
 	public const SKIN_128_128_SIZE = 128 * 128 * self::PIXEL_SIZE;
+
 	public const SKIN_256_32_SIZE = 256 * 32 * self::PIXEL_SIZE;
 	public const SKIN_256_64_SIZE = 256 * 64 * self::PIXEL_SIZE;
 	public const SKIN_256_128_SIZE = 256 * 128 * self::PIXEL_SIZE;
 	public const SKIN_256_256_SIZE = 256 * 256 * self::PIXEL_SIZE;
+
 	public const SKIN_512_32_SIZE = 512 * 32 * self::PIXEL_SIZE;
 	public const SKIN_512_64_SIZE = 512 * 64 * self::PIXEL_SIZE;
 	public const SKIN_512_128_SIZE = 512 * 128 * self::PIXEL_SIZE;
 	public const SKIN_512_256_SIZE = 512 * 256 * self::PIXEL_SIZE;
 	public const SKIN_512_512_SIZE = 512 * 512 * self::PIXEL_SIZE;
+
+	public const SKIN_1024_32_SIZE = 1024 * 32 * self::PIXEL_SIZE;
+	public const SKIN_1024_64_SIZE = 1024 * 64 * self::PIXEL_SIZE;
+	public const SKIN_1024_128_SIZE = 1024 * 128 * self::PIXEL_SIZE;
+	public const SKIN_1024_256_SIZE = 1024 * 256 * self::PIXEL_SIZE;
+	public const SKIN_1024_512_SIZE = 1024 * 512 * self::PIXEL_SIZE;
+	public const SKIN_1024_1024_SIZE = 1024 * 1024 * self::PIXEL_SIZE;
+
+	public const SKIN_2048_32_SIZE = 2048 * 32 * self::PIXEL_SIZE;
+	public const SKIN_2048_64_SIZE = 2048 * 64 * self::PIXEL_SIZE;
+	public const SKIN_2048_128_SIZE = 2048 * 128 * self::PIXEL_SIZE;
+	public const SKIN_2048_256_SIZE = 2048 * 256 * self::PIXEL_SIZE;
+	public const SKIN_2048_512_SIZE = 2048 * 512 * self::PIXEL_SIZE;
+	public const SKIN_2048_1024_SIZE = 2048 * 1024 * self::PIXEL_SIZE;
+	public const SKIN_2048_2048_SIZE = 2048 * 2048 * self::PIXEL_SIZE;
 
 	public function __construct(
 		private int $height,
@@ -52,18 +70,36 @@ class SkinImage{
 		return match(strlen($data)){
 			self::SINGLE_SKIN_SIZE => new self(32, 64, $data),
 			self::DOUBLE_SKIN_SIZE => new self(64, 64, $data),
+
 			self::SKIN_128_32_SIZE => new self(32, 128, $data),
 			self::SKIN_128_64_SIZE => new self(64, 128, $data),
 			self::SKIN_128_128_SIZE => new self(128, 128, $data),
+
 			self::SKIN_256_32_SIZE => new self(32, 256, $data),
 			self::SKIN_256_64_SIZE => new self(64, 256, $data),
 			self::SKIN_256_128_SIZE => new self(128, 256, $data),
 			self::SKIN_256_256_SIZE => new self(256, 256, $data),
+
 			self::SKIN_512_32_SIZE => new self(32, 512, $data),
 			self::SKIN_512_64_SIZE => new self(64, 512, $data),
 			self::SKIN_512_128_SIZE => new self(128, 512, $data),
 			self::SKIN_512_256_SIZE => new self(256, 512, $data),
-			self::SKIN_512_512_SIZE => new self(512, 512, $data)
+			self::SKIN_512_512_SIZE => new self(512, 512, $data),
+
+			self::SKIN_1024_32_SIZE => new self(32, 1024, $data),
+			self::SKIN_1024_64_SIZE => new self(64, 1024, $data),
+			self::SKIN_1024_128_SIZE => new self(128, 1024, $data),
+			self::SKIN_1024_256_SIZE => new self(256, 1024, $data),
+			self::SKIN_1024_512_SIZE => new self(512, 1024, $data),
+			self::SKIN_1024_1024_SIZE => new self(1024, 1024, $data),
+
+			self::SKIN_2048_32_SIZE => new self(32, 2048, $data),
+			self::SKIN_2048_64_SIZE => new self(64, 2048, $data),
+			self::SKIN_2048_128_SIZE => new self(128, 2048, $data),
+			self::SKIN_2048_256_SIZE => new self(256, 2048, $data),
+			self::SKIN_2048_512_SIZE => new self(512, 2048, $data),
+			self::SKIN_2048_1024_SIZE => new self(1024, 2048, $data),
+			self::SKIN_2048_2048_SIZE => new self(2048, 2048, $data)
 		};
 
 		throw new \InvalidArgumentException("Unknown size");
